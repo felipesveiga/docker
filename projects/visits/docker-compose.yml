@@ -1,0 +1,10 @@
+version: '3'
+services: 
+  redis-server:
+    image:'redis'
+  # We can leverage our existing Dockerfile in order to promptly
+  # build our server container. 
+  node-app:
+    build: .
+    ports:
+      - "8081:8081"
