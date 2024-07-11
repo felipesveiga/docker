@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build:
+      # `context` specifies which directory Docker must regard as '.'
+      # (eg. for copyng)
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /home/node/app/node_modules
+      - .:/home/node/app
