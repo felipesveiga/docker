@@ -15,4 +15,5 @@ RUN npm run build
 # Second phase of copying ghe build folder and starting up
 # the nginx engine
 FROM nginx
+EXPOSE 80
 COPY --from=builder /home/node/app/build /usr/share/nginx/html
