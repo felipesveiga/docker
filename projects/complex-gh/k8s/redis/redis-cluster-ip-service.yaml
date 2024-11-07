@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: redis-cluster-ip-service 
 spec:
+  type: ClusterIP
   selector:
     component: redis 
   ports:

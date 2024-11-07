@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: postgres-deployment
 spec:
+  replicas: 1
   selector:
     matchLabels:
       component: postgres 
@@ -11,7 +12,6 @@ spec:
       labels:
         component: postgres
     spec:
-      replicas: 1
       containers:
       - name: postgres 
         image: postgres
