@@ -29,3 +29,9 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 5432 
+        env:
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: pgpassword
+                key: PGPASSWORD
