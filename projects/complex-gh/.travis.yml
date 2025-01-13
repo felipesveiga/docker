@@ -9,4 +9,9 @@ before_install:
   - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project fibonacci-k8s-445919
   - gcloud config set compute/zone us-central1-a
-  - gcloud container clusters get-credentials us-central1-a
+  - gcloud container clusters get-credentials multi-cluster 
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t felipesveiga/react-test -f ./client/Dockerfile.dev
+
+script:
+  - docker run felipesveiga/react-test npm test -- --coverage
