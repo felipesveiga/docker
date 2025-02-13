@@ -3,8 +3,12 @@ kind: Config
 deploy:
   kubectl:
     manifests:
-      - ./k8s/*
+      #- ./k8s/*
       - ./k8s-dev/*
+      - ./k8s-dev/client/*
+      - ./k8s-dev/postgres/*
+      - ./k8s-dev/redis/*
+      - ./k8s-dev/server/*
 build:
   local:
     push: false
