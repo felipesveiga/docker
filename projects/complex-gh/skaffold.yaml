@@ -3,7 +3,6 @@ kind: Config
 deploy:
   kubectl:
     manifests:
-      #- ./k8s/*
       - ./k8s-dev/*
       - ./k8s-dev/client/*
       - ./k8s-dev/postgres/*
@@ -33,7 +32,7 @@ build:
         manual:
           - src: "*.js"
             dest: .
-    - image: felipesveiga/server-dev
+    - image: felipesveiga/server
       context: server
       docker:
         dockerfile: Dockerfile.dev
